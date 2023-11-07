@@ -9,6 +9,9 @@ services:
       - NIFI_WEB_HTTP_PORT=8080
     volumes:
       - ./output:/output
+    depends_on:
+      - postgres
+      - mysql
 
   postgres:
     image: postgres:16-alpine
